@@ -3,3 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.header {
+    background-color: rgb(56, 56, 201);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+}
