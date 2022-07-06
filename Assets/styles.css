@@ -35,3 +35,10 @@
     margin: 8px 0 0 0;
     background-color: var(--blue);
 }
+
+.custom-separator {
+    border: 2px solid black;
+    margin: 10px 0 0 0;
+    width:60%;
+    left: 15px;
+}
