@@ -2,12 +2,36 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    --blue: rgb(56, 56, 201);
 }
 
 .header {
-    background-color: rgb(56, 56, 201);
+    background-color: var(--blue);
     display: flex;
     text-align: center;
     justify-content: center;
     padding: 20px;
+}
+
+.custom-div {
+    flex-direction: column;
+    align-items: space-between;
+
+}
+
+.custom-div h1 {
+    font-weight: bold;
+}
+
+.custom-input {
+   border: 1px solid black;
+   border-radius: 9px;
+   margin: 8px 0 0 0;
+   width: 80%;
+}
+
+.custom-button {
+    width: 80%;
+    margin: 8px 0 0 0;
+    background-color: var(--blue);
 }
