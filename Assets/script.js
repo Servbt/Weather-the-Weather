@@ -46,12 +46,27 @@ console.log("testing if hooked up to js");
 //once I find a loop and get the appropriate data through each iteration I have to display that info in 5 cute little divs
 
 
+var searchBtn = document.getElementById("search-button");
+var searchBar = document.getElementById("submission-form");
+
+$(searchBtn).click (function (){
+
+    var city = searchBar.value.trim();
+    console.log(city);
+
+    if (searchBar.value) {
+        getlocationRepo(city);
+    }
+});
 
 
 
 
-var getlocationRepo = function () {
-    var apiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=orlando&appid=ca15c61b9bcc2642e628c234d0282a55";
+
+
+
+var getlocationRepo = function (location) {
+    var apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=ca15c61b9bcc2642e628c234d0282a55`;
 
     fetch(apiUrl)
         .then(function (response) {
@@ -59,16 +74,19 @@ var getlocationRepo = function () {
                 console.log(response);
                 response.json().then(function (data) {
                     console.log(data);
+                    console.log(data[0].lat);
+                    console.log(data[0].lon);
+                    var cityLat = data[0].lat;
+                    var cityLon = data[0].lon;
+                    getweatherRepo(cityLat , cityLon);
                 })
             }
         })
 }
 
 
-
-
-var getweatherRepo = function () {
-    var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&appid=ca15c61b9bcc2642e628c234d0282a55";
+var getweatherRepo = function (lat , lon) {
+    var apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=ca15c61b9bcc2642e628c234d0282a55`;
 
     fetch(apiUrl)
         .then(function (response) {
@@ -83,5 +101,5 @@ var getweatherRepo = function () {
 }
 
 
-getweatherRepo();
-getlocationRepo();
+
+
