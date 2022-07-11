@@ -8,18 +8,18 @@ console.log("testing if hooked up to js");
 
 // I need to successfully access the weather api and fetch the appropriate data //
 // I'm probably going to need json ~
-// once I get that I can pass that info (arguements) into other functions to use
-// I have to fetch location data
-// I also have to fetch weather data based on location...
+// once I get that I can pass that info (arguements) into other functions to use ~
+// I have to fetch location data ~
+// I also have to fetch weather data based on location... ~
 
-// if I cant fetch I should probably try and display a message of some kind 
+// if I cant fetch I should probably try and display a message of some kind  
 
-//a submission portion that finds the city your looking for //
-// needs to include a submission form
+//a submission portion that finds the city your looking for // ~
+// needs to include a submission form ~
 
 
-// I also need a button to trigger submission form 
-//need to make a function to search the data and find that once the button is clicked
+// I also need a button to trigger submission form  ~
+//need to make a function to search the data and find that once the button is clicked ~
 
 //once that happens I need it to display the chosen city as a button underneath
 // once the data is found  I need to make the proper elements 
@@ -56,11 +56,10 @@ $(searchBtn).click (function (){
 
     if (searchBar.value) {
         getlocationRepo(city);
+    } else {
+        alert("Please Input a city");
     }
 });
-
-
-
 
 
 
@@ -83,6 +82,8 @@ var getlocationRepo = function (location) {
             }
         })
 }
+
+
 
 
 var getweatherRepo = function (lat , lon) {
