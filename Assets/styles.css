@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     --blue: rgb(56, 56, 201);
+    --historyBtn: rgb(112, 112, 185);
 }
 
 .header {
@@ -41,4 +42,8 @@
     margin: 10px 0 0 0;
     width:60%;
     left: 15px;
+}
+
+.historyBtn {
+    background-color: var(--historyBtn);
 }

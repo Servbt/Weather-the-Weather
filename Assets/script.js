@@ -1,8 +1,3 @@
-console.log("testing if hooked up to js");
-
-
-
-
 // this challenge seems to be divided into four main chunks //
 // i technically have to style the page too...
 
@@ -48,8 +43,10 @@ console.log("testing if hooked up to js");
 
 var searchBtn = document.getElementById("search-button");
 var searchBar = document.getElementById("submission-form");
+var historyTab = document.getElementById("historyTab");
+const history = [];
 
-$(searchBtn).click (function (){
+$(searchBtn).click(function () {
 
     var city = searchBar.value.trim();
     console.log(city);
@@ -59,8 +56,17 @@ $(searchBtn).click (function (){
     } else {
         alert("Please Input a city");
     }
+
+    pastCities(city);
 });
 
+function pastCities (city) {
+    var historyBtn = document.createElement("button");
+    $(historyBtn).addClass("btn btn-secondary btn-lg custom-button")
+    historyBtn.textContent = city;
+    historyTab.appendChild(historyBtn);
+
+}
 
 
 
@@ -77,16 +83,14 @@ var getlocationRepo = function (location) {
                     console.log(data[0].lon);
                     var cityLat = data[0].lat;
                     var cityLon = data[0].lon;
-                    getweatherRepo(cityLat , cityLon);
+                    getweatherRepo(cityLat, cityLon);
                 })
             }
         })
 }
 
 
-
-
-var getweatherRepo = function (lat , lon) {
+var getweatherRepo = function (lat, lon) {
     var apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=ca15c61b9bcc2642e628c234d0282a55`;
 
     fetch(apiUrl)
