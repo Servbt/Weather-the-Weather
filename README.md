@@ -1,14 +1,13 @@
-# Portfolio 
+#Weather-the-Weather
 
-I tried my best in making a some-what organized webpage filled with links to other websites/projects
-please let me know what I can do to improve on wether it's semantics or styling. thank you for taking the time to read this,
+This is still a work in progress, but I think at this point it'd be best to post what I have for now. The functionality for local storage and calling the API is present, as well as appending information on the page, it is severely in need of some more clean up though.. Any feedback would be greatly appreciated, thank you for reading this.
 
-## here is a screenshot of the website
+## here is a screenshot 
 
-![the website.](./assets/Images/Capture.PNG)
+![the website.](./Assets/Images/Capture.PNG)
 
 
-## Here are some links pertaining to the assigment
+## Here are some links for the website
 
 * Github: https://github.com/Servbt/The-Interstice-personal-portfolio-
 * Web-page: https://servbt.github.io/The-Interstice-personal-portfolio-/
