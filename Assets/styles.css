@@ -40,10 +40,27 @@
 .custom-separator {
     border: 2px solid black;
     margin: 10px 0 0 0;
-    width:60%;
+    width:80%;
     left: 15px;
 }
 
 .historyBtn {
     background-color: var(--historyBtn);
+}
+
+.items {
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.generatedInfo {
+
+    padding: 10px 80px 10px 80px;
+    border: 3px solid rgb(56, 56, 201);
+    border-radius: 5px;
 }

@@ -45,19 +45,30 @@ var searchBtn = document.getElementById("search-button");
 var searchBar = document.getElementById("submission-form");
 var historyTab = document.getElementById("historyTab");
 
+var currentTemp = document.getElementById("temp");
+var currentHumidity = document.getElementById("humidity");
+var currentWinds = document.getElementById("wind-speed");
+var currentUV = document.getElementById("uv-index");
+var currentCity = document.getElementById("location");
+var sideBox = document.getElementById("selected-city");
+
+
+// array that I want to save into
+var history = [];
 
 $(searchBtn).click(function () {
 
     var city = searchBar.value.trim();
 
     if (searchBar.value) {
+
         getlocationRepo(city);
     } else {
         alert("Please Input a city");
     }
 
-
-    localStorage.setItem("historyBtn", JSON.stringify(city));
+// setting local storage for the results
+    localStorage.setItem("city", JSON.stringify(city));
     displayHistory(city);
 });
 
@@ -69,6 +80,13 @@ function loadCities () {
 };
 
 function displayHistory (city) {
+
+    // I was thinking about using a for loop to go through each item in the array and display it
+    // for (var i = 0; i < 0; i = history.length){
+
+        // var location = history[i];
+
+            // }
     var historyBtn = document.createElement("button");
     $(historyBtn).addClass("btn btn-secondary btn-lg custom-button")
     historyBtn.textContent = city;
@@ -82,6 +100,7 @@ function displayHistory (city) {
 
 
 var getlocationRepo = function (location) {
+    currentCity.innerHTML = location;
     var apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=ca15c61b9bcc2642e628c234d0282a55`;
     
     fetch(apiUrl)
@@ -94,6 +113,7 @@ var getlocationRepo = function (location) {
                 console.log(data[0].lon);
                 var cityLat = data[0].lat;
                 var cityLon = data[0].lon;
+
                 getweatherRepo(cityLat, cityLon);
             })
         }
@@ -111,11 +131,21 @@ var getweatherRepo = function (lat, lon) {
                 response.json().then(function (data) {
                     console.log(data);
                     console.log(data.current);
+                    displayWeather(data);
                 })
             }
         })
     }
     
+
+   function displayWeather({current}) {
+        $(sideBox).addClass("generatedInfo");
+        currentTemp.textContent = `Temperature: ${(((current.temp-273)*1.8) +32)} F`;
+        currentHumidity.textContent = `Humidity: ${current.humidity}%`;
+        currentWinds.textContent = `Wind-speed: ${current.wind_speed} mph`;
+        currentUV.textContent = `UV index: ${current.uvi}`;
+    }
+
 
     loadCities();
     
