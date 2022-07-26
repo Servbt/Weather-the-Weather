@@ -9,6 +9,6 @@ This is still a work in progress, but I think at this point it'd be best to post
 
 ## Here are some links for the website
 
-* Github: https://github.com/Servbt/The-Interstice-personal-portfolio-
-* Web-page: https://servbt.github.io/The-Interstice-personal-portfolio-/
+* Github: https://github.com/Servbt/Weather-the-Weather
+* Web-page: https://servbt.github.io/Weather-the-Weather/
 
