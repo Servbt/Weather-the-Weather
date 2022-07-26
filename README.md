@@ -4,7 +4,7 @@ This is still a work in progress, but I think at this point it'd be best to post
 
 ## Here is a screenshot 
 
-![the website.](./Assets/Images/Capture.PNG)
+![the website](./Assets/images/Capture.PNG)
 
 
 ## Here are some links for the website
