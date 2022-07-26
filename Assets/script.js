@@ -143,7 +143,7 @@ var getweatherRepo = function (lat, lon) {
         currentTemp.textContent = `Temperature: ${(((current.temp-273)*1.8) +32)} F`;
         currentHumidity.textContent = `Humidity: ${current.humidity}%`;
         currentWinds.textContent = `Wind-speed: ${current.wind_speed} mph`;
-        currentUV.textContent = `UV index: ${current.uvi}`;
+        currentUV.innerHTML = `UV index: <span class="uv"> ${current.uvi} </span>`;
     }
 
 
